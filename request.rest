@@ -1,0 +1,59 @@
+### Health
+GET http://localhost:3000/
+
+### Create Post
+POST http://localhost:3000/post
+Content-Type: application/json
+
+{
+  "sender": "user123",
+  "content": "Hello from REST Client"
+}
+
+### Get All Posts
+GET http://localhost:3000/post
+
+### Get Posts By Sender
+GET http://localhost:3000/post?sender=user123
+
+### Get Post By Id (paste a real id)
+GET http://localhost:3000/post/697a2706c8fd1d278760c917
+
+### Update Post (paste a real id)
+PUT http://localhost:3000/post/697a2706c8fd1d278760c917
+Content-Type: application/json
+
+{
+  "sender": "user123",
+  "content": "Updated content"
+}
+
+### Create Comment
+# To get a postId, first run the "Create Post" request. 
+# Then, copy the "_id" value from the response and paste it as the "postId" below.
+POST http://localhost:3000/comment
+Content-Type: application/json
+
+{
+  "postId": "697a2706c8fd1d278760c917",
+  "sender": "user456",
+  "content": "First comment"
+}
+
+### Get All Comments
+GET http://localhost:3000/comment
+
+### Get Comment By Id (paste real id)
+GET http://localhost:3000/comment/697a27a0c8fd1d278760c936
+
+### Update Comment (paste real id)
+PUT http://localhost:3000/comment/697a27a0c8fd1d278760c936
+Content-Type: application/json
+
+{
+  "sender": "user456",
+  "content": "Updated comment"
+}
+
+### Delete Comment (paste real id)
+DELETE http://localhost:3000/comment/697a2706c8fd1d278760c917
